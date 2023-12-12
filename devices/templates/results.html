@@ -1,0 +1,96 @@
+<table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                Router
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    SYS
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    WEB
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    SSH
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    SNMPv3
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    USERCONS
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    USERP
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    NTP
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    NO TELNET/SSH
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    INACT
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Ggb
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    FTP/SFTP
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    POLÍTICAS
+                </th>
+            </tr>
+        
+    </thead>
+
+    <tbody>
+        
+        {% for device in devices  %}
+        <tr class="bg-white dark:bg-gray-800">
+            
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                {{device.ip}}
+            </th>
+            <td class="px-6 py-4">
+                {{device.hostname}}
+            </td>
+            <td class="px-6 py-4">
+                {{device.syslog}}
+            </td>
+            <td class="px-6 py-4">
+                {{device.web_access}}
+            </td>
+            <td class="px-6 py-4">
+                {{device.ssh}}
+            </td>
+            <td class="px-6 py-4">
+                {{device.snmp}}
+            </td>
+            <td class="px-6 py-4">
+                {{device.users}}
+            </td>
+            <td class="px-6 py-4">
+                {{device.ntp}}
+            </td>
+            <td class="px-6 py-4">
+                {{device.no_telnet}}
+            </td>
+            <td class="px-6 py-4">
+                {{device.inactivity}}
+            </td>
+            <td class="px-6 py-4">
+                {{device.interfaces}}
+            </td>
+            <td class="px-6 py-4">
+                {{device.protocols}}
+            </td>
+            <td class="px-6 py-4">
+                {{device.policies}}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
